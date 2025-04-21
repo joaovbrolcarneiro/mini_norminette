@@ -1,0 +1,31 @@
+echo "o" 
+echo 'i' 
+echo "o" "o"
+echo 'i' 'i'
+echo a   b   c
+echo 'a'   'b'  'c'
+echo "a"   "b"   "C"
+echo "a"   'b'   "C"
+""a
+''b
+ls > file.log | cat < file.log
+> file.log ls | < file.log cat
+\n
+""
+''
+unset HOME | cd
+cd -
+echo "$USER"
+echo "'$USER'"
+echo '"$USER"'
+echo $USER
+'
+" 
+|||||
+>>>>>
+<<<<
+unset env
+sort < file.log -r
+< file.log sort
+echo > file.log hello
+   "l"'s'     s

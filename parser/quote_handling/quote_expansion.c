@@ -83,15 +83,12 @@ static bool	copy_expansion_part(t_exp_cpy_vars *v, char *input, char **env)
 char	*quote_handler_cpy(int total_len, char *input, char **env)
 {
 	t_exp_cpy_vars	v;
-	char			*trimmed_input;
+	//char			*trimmed_input;//valgrind
 	bool			success;
 
-	trimmed_input = ft_strtrim(input, " ");
-	if (trimmed_input && ft_strcmp(trimmed_input, "$") == 0)
-	{
-		// free(trimmed_input); // free?
-		return (ft_strdup("$"));
-	}
+	//trimmed_input = ft_strtrim(input, " ");//valgrind
+	if(ft_strlen(input) >= 3 && ft_strcmp(ft_strtrim(input, " "),"$") == 0)//valgrind
+		return ("$");
 	// free(trimmed_input); // free?
 
 	v.dst = ft_calloc(sizeof(char), total_len + 1);

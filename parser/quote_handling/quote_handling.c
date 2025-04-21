@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/* */
-/* :::      ::::::::   */
-/* quote_handling.c                                   :+:      :+:    :+:   */
-/* +:+ +:+         +:+     */
-/* By: hde-barr <hde-barr@student.42.fr>          +#+  +:+       +#+        */
-/*<y_bin_46>+#+#+#+#+#+   +#+           */
-/* Created: 2025/02/27 17:59:46 by hde-barr          #+#    #+#             */
-/* Updated: 2025/04/16 20:45:00 by hde-barr         ###   ########.fr       */
-/* */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   quote_handling.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hde-barr <hde-barr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 17:59:46 by hde-barr          #+#    #+#             */
+/*   Updated: 2025/04/21 17:25:56 by hde-barr         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
@@ -127,6 +127,8 @@ char	*quote_handler(t_token *token, char **env, int *is_unclosed)
 	if (*is_unclosed)
 		return (original_value);
 	is_operator_literal = handler_quote_operator(original_value);
+	if(ft_strlen(token->value) <= 2  && ischarset("'\"", *token->value))////valgrind
+		return(token->value = "");/////valgrind	
 	if (quote_char == '\'')
 		return (handle_single_quotes(token, original_value));
 	else if (quote_char == '"')

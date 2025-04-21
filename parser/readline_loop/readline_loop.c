@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   readline_loop.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbrol-ca <jbrol-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hde-barr <hde-barr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 18:31:39 by hde-barr          #+#    #+#             */
-/*   Updated: 2025/04/17 17:02:22 by jbrol-ca         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:58:17 by hde-barr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	readline_loop(t_shell *shell) // ALTEREI - JOAO
 
 	while (1)
 	{
+		//minigarbege_colector();
 		ft_putstr_fd("💥", 1);
 		konopwd(true, "pwd");
 		input = readline(TITLE);
