@@ -74,7 +74,7 @@ void	expand_token_list_no_assignments(t_token *token_list, char **env)
 				ft_putstr_fd("minishell: warning: expansion failed\n", 2);
 			else if (expanded != original_value)
 			{
-				free(original_value);
+				//free(original_value);//valgrind
 				cur->value = expanded;
 			}
 		}
